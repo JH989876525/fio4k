@@ -4,6 +4,6 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-DEV=${1:-/dev/sde}
+DEV=${1}
 
-sudo fio fio.cfg -filename="${DEV}"
+fio fio.cfg -filename="${DEV}"
