@@ -4,6 +4,8 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-DEV=${1}
+DEVS=$(IFS=:; echo "$*")
 
-fio fio.cfg -filename="${DEV}"
+echo "DEVS=${DEVS}"
+
+fio fio.cfg -filename="${DEVS}"
