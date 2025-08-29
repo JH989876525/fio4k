@@ -13,6 +13,7 @@
 ```bash
 ./run.sh /dev/sda /dev/sdb /dev/sdc /dev/sdd
 ```
+- Modify `runtime` in [fio.cfg](fio.cfg) to change testing time, default 60 secound.
 
 # How to draw
 ```bash
