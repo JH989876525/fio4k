@@ -18,10 +18,10 @@ while true; do
     CURRENT_HOUR=$(date +%H)
     CHANCE=$(( $RANDOM % 100 ))
 
-    SIZE_K=$(( $RANDOM % 100))
-    SIZE_M=$(( $RANDOM % 100))
-    SIZE_G1=$(( $RANDOM % 3))
-    SIZE_G2=$(( $RANDOM % 100))
+    SIZE_K=$(( $RANDOM % 1024 + 64))
+    SIZE_M=$(( $RANDOM % 128 + 16))
+    SIZE_G1=$(( $RANDOM % 3 + 1))
+    SIZE_G2=$(( $RANDOM % 28 + 100))
 
     if [ "$CURRENT_HOUR" -ge 9 ] && [ "$CURRENT_HOUR" -lt 18 ]; then
         echo "核心工作時間 ($CURRENT_HOUR:00)"
