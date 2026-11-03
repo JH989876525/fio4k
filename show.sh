@@ -7,7 +7,7 @@
 # print the average bandwidth of every fio_<TEST>_{READ,WRITE}_bw.<N>.log as a table
 
 # job names in the order of fio.cfg, fall back to alphabetical order of logs
-TESTS=$(grep -oP '^\[\K\w+(?=_(READ|WRITE)\])' fio.cfg 2>/dev/null | awk '!s[$0]++')
+TESTS=$(sed -n 's/^\[\(.*\)_\(READ\|WRITE\)\]$/\1/p' fio.cfg 2>/dev/null | awk '!s[$0]++')
 
 if ! ls fio_*_bw*.log >/dev/null 2>&1; then
     echo "no fio_*_bw*.log found, run ./run.sh <devices> first" >&2
